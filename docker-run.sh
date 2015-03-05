@@ -1,4 +1,4 @@
-id=12
+id=14
 
 docker run -d \
 --name=mysql-slave-${id} \
@@ -16,4 +16,4 @@ docker run -d \
 -e SERVER_ID="${id}" \
 -v $pwd:/root \
 --link mysql-slave-8:slave-8 \
- mysql-replicator
+mysql-replicator

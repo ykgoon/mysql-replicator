@@ -11,5 +11,6 @@ RUN DEBIAN_FRONTEND=noninteractive \
     && rm -rf /var/lib/mysql
 
 ADD my.cnf /etc/mysql/
+ADD scripts/start.sh /root
 
 CMD [ "/root/start.sh" ]
