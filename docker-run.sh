@@ -1,10 +1,9 @@
-id=14
+id=4
 
 docker run -d \
 --name=mysql-slave-${id} \
--p 2024:22 \
--e MASTER_HOST="slave-8" \
--e MASTER_SSH_USER="user" \
+-e MASTER_HOST="slave-2" \
+-e MASTER_SSH_USER="root" \
 -e MASTER_MYSQL_PORT="3306" \
 -e MASTER_USER="root" \
 -e MASTER_PASSWORD="" \
@@ -14,6 +13,6 @@ docker run -d \
 -e REPLICANT_USER="slave-${id}" \
 -e REPLICANT_PASSWORD="7PGzsiSkAMpP2maZ" \
 -e SERVER_ID="${id}" \
--v $pwd:/root \
---link mysql-slave-8:slave-8 \
+-v $(pwd)/scripts:/root/scripts \
+--link mysql-slave-2:slave-2 \
 mysql-replicator

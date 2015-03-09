@@ -10,7 +10,9 @@ RUN DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y mc \
     && rm -rf /var/lib/mysql
 
-ADD my.cnf /etc/mysql/
-ADD scripts/start.sh /root
+ADD scripts/my.cnf /etc/mysql/
+ADD scripts/start.sh /root/
+
+EXPOSE 22
 
 CMD [ "/root/start.sh" ]
